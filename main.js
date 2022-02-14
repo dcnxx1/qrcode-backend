@@ -33,6 +33,6 @@ app.get('showImage', (req, res) => {
 res.sendFile('./temp/ige.png')
 })
 
-app.listen(4999 ,() =>{
+app.listen(process.env.PORT,() =>{
 console.log('server is running')
 })
