@@ -6,8 +6,11 @@ const fs = require('fs')
 const cors = require('cors')
 const path= require('path')
 
-
-app.use(cors())
+const corsOptions = {
+    origin: 'https://qrcode-front-end.herokuapp.com/',
+    optionsSuccessStatus: 200 
+}
+app.use(cors(corsOptions))
 app.use(express.json())
 
 
@@ -15,8 +18,8 @@ app.get('/', (req,res) => {
     res.send("App")
 })
 
-app.post('/getQR', async (req,res) => {
-    res.set('Access-Control-Allow-Origin', '*')   
+app.post('/getQR', async (req,res) => { 
+
 const url = await qrcode(req.body)
 res.send(url) 
 })
