@@ -6,17 +6,10 @@ const fs = require('fs')
 const cors = require('cors')
 const path= require('path')
 
-const corsOptions = {
-    origin: 'https://qrcode-front-end.herokuapp.com',
-    optionsSuccessStatus: 200 
-}
+
 app.use(cors(corsOptions))
 app.use(express.json())
-app.use((req,res,next) => {
-    res.header("Access-Control-Allow-Origin", "https://qrcode-front-end.herokuapp.com")
-    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept")
-    next()
-})
+
 
 
 app.get('/', (req,res) => {
