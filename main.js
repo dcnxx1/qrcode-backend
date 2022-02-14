@@ -11,6 +11,10 @@ app.use(cors())
 app.use(express.json())
 
 
+app.get('/', (req,res) => {
+    res.send("App")
+})
+
 app.post('/getQR', async (req,res) => {
     res.set('Access-Control-Allow-Origin', '*')   
 const url = await qrcode(req.body)
