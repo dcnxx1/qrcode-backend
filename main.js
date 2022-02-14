@@ -7,7 +7,7 @@ const cors = require('cors')
 const path= require('path')
 
 
-app.use(cors(corsOptions))
+app.use(cors())
 app.use(express.json())
 
 
