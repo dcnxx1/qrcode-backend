@@ -19,7 +19,7 @@ app.get('/', (req,res) => {
 })
 
 app.post('/getQR', async (req,res) => { 
-console.log(req.body)
+console.log(`req body: ${req.body}`)
 const url = await qrcode(req.body)
 res.send(url) 
 })
