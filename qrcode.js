@@ -12,12 +12,12 @@ const cloud = require('./storage')
    
    const message = converter(type, input)
 
-   const id = makeId(7)
-   const url = path.join(__dirname, `/temp/QR_${id}.png`)
+   
+   
 
-   await qrcode.toFile(url, message)
+  const urlResponse =  await qrcode.toDataURL(message)
 
-  const imageResponse = await cloud.uploader.upload(url)
+  const imageResponse = await cloud.uploader.upload(urlResponse)
   
   return {url: imageResponse.secure_url, id: imageResponse.public_id}
 }

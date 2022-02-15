@@ -16,9 +16,11 @@ app.get('/', (req,res) => {
     res.send("App")
 })
 
-app.post('/getQR', async (req,res) => { 
-console.log(`req body: ${req.body}`)
+app.post('/getQR', cors(), async (req,res) => { 
+
+
 const url = await qrcode(req.body)
+
 res.send(url) 
 })
 
