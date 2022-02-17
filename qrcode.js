@@ -44,7 +44,7 @@ const converter = (type, input) => {
         }
 
     } catch(err){
-        if(err) console.log(`err while trying to convert : ${err}`)
+        if(err) throw err
     }
     
 }
