@@ -11,7 +11,7 @@ _______
 
 *****
 
-## Single page appliction made with :
+## Single page application made with :
 
 1. React.js (Framework)
 2. NodeJS
